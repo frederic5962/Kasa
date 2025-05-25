@@ -1,3 +1,9 @@
+import Banner from '../components/banner/Banner';
+
 export default function Home() {
-    return <h1>Bienvenue sur Kasa</h1>;
+  return (
+    <>
+      <Banner />
+    </>
+  );
 }

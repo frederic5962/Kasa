@@ -1,0 +1,11 @@
+.banner {
+  background: url('/src/assets/banner-main.svg') center/cover no-repeat;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  border-radius: 25px;
+  mix-blend-mode: Darken;
+  filter: brightness(70%); /* Réduit la luminosité */
+}
