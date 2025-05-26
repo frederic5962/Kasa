@@ -10,10 +10,11 @@ const router = createBrowserRouter([
         element: <App />, // `App.jsx` est le layout principal
         errorElement: <ErrorPage />,
         children: [
-            { path: "/", element: <Home /> },
+            { index: true, element: <Home /> }, // Définition de la page par défaut
             { path: "/about", element: <About /> },
         ],
     },
 ]);
+
 
 export default router;
