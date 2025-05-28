@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import ErrorPage from "../pages/ErrorPage";
+import Home from "../pages/home/Home";
+import About from "../pages/about/About";
+import ErrorPage from "../pages/errorpage/ErrorPage";
+import Logement from "../pages/logement/Logement"; // Ajout de la page logement
 
 const router = createBrowserRouter([
     {
@@ -10,11 +11,11 @@ const router = createBrowserRouter([
         element: <App />, // `App.jsx` est le layout principal
         errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <Home /> }, // Définition de la page par défaut
-            { path: "/about", element: <About /> },
+            { index: true, element: <Home /> }, // Page d'accueil
+            { path: "about", element: <About /> }, // Page "À propos"
+            { path: "logement/:id", element: <Logement /> }, // Page logement dynamique
         ],
     },
 ]);
-
 
 export default router;

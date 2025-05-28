@@ -1,13 +1,15 @@
 import "./layouts/App/global.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import { Outlet } from "react-router-dom"; // Permet d'afficher les pages
+import { Outlet, useLocation } from "react-router-dom";
 
 function App() {
+    const location = useLocation();
+
     return (
         <>    
             <Header />
-            <main>
+            <main className={location.pathname === "/" ? "homePage" : "logementPage"}>
                 <Outlet /> {/* Affiche dynamiquement la bonne page */}
             </main>
             <Footer />

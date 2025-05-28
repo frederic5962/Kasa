@@ -1,20 +1,14 @@
-import styles from './gallery.module.scss';
-
-const blocks = [
-  { id: 1, title: 'galerie Rouge' },
-  { id: 2, title: 'Carré Dynamique' },
-  { id: 3, title: 'Bloc Spécial' },
-  { id: 4, title: 'Zone Créative' },
-  { id: 5, title: 'Section Design' },
-  { id: 6, title: 'Element Final' },
-];
+import styles from "./gallery.module.scss";
+import { Link } from "react-router-dom";
+import logementsData from "../../data/logements.json"; 
 export default function Gallery() {
   return (
     <div className={styles.gallery}>
-      {blocks.map(block => (
-        <a href="#" key={block.id} className={styles.item}>
-          <p className={styles.title}>{block.title}</p>
-        </a>
+      {logementsData.map(logement => (
+        <Link to={`/logement/${logement.id}`} key={logement.id} className={styles.item}>
+          <img src= { logement.cover} alt= {logement.title} />
+          <p className={styles.title}>{logement.title}</p>
+        </Link>
       ))}
     </div>
   );

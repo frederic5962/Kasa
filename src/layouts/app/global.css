@@ -26,13 +26,21 @@ body {
   align-items: center;
 }
 
-main {
-  flex: 1 1;
+
+main.homePage {
+ flex: 1 1;
   width: 1240px;
   height: 1095px;
   align-items: center;
   justify-content: center;
 }
+
+main.logementPage {
+  width: 1240px;
+  height: 643px; /* Hauteur spécifique à la maquette */
+  margin: auto;
+}
+
 
 
 
