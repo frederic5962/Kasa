@@ -17,7 +17,7 @@ function Logement() {
     setIndex((index - 1 + logement.pictures.length) % logement.pictures.length);
 
   return (
-    <div>
+    <>
       {/* Carrousel d'images amélioré */}
       <div className={styles.carrousel}>
         <button className={styles.prevButton} onClick={prevImage}>
@@ -37,9 +37,20 @@ function Logement() {
           ▶️
         </button>
       </div>
-      <h1>{logement.title}</h1>
+      <h1 className={styles.logementTitle}>{logement.title}</h1>
       <p>{logement.description}</p>
-    </div>
+      <ul className={styles.tags}>
+        {logement.tags.map((tag, index) => (
+          <li key={index} className={styles.tagItem}>
+            {tag}
+          </li>
+        ))}
+      </ul>
+      <details>
+        <summary>Plus d'informations</summary>
+        <p>Voici des détails supplémentaires sur le logement.</p>
+      </details>
+    </>
   );
 }
 

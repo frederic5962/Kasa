@@ -6,7 +6,6 @@ export default function Gallery() {
     <div className={styles.gallery}>
       {logementsData.map(logement => (
         <Link to={`/logement/${logement.id}`} key={logement.id} className={styles.item}>
-          <img src= { logement.cover} alt= {logement.title} />
           <p className={styles.title}>{logement.title}</p>
         </Link>
       ))}
