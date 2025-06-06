@@ -1,4 +1,4 @@
- .bannerAbout {
+.bannerAbout {
   background: url('/src/assets/banner-about.svg') center/cover no-repeat;
   width: 1240px;
   height: 223px;
@@ -10,9 +10,12 @@
   filter: brightness(60%); /* Réduit la luminosité */
 }
 
-h2 {
-
-  align-items: center;
+.accordionContainer {
+  display: flex;
+  flex-direction: column; /* Organise les éléments verticalement */
+  gap: 15px; /* Ajoute de l’espace entre les accordéons */
+  max-width: 1023px;
+  margin: auto; /* Centre l'ensemble */
+  padding: 20px; /* Ajoute du padding pour éviter que les accordéons soient collés */
 }
-
 

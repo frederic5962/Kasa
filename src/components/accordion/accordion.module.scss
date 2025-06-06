@@ -1,24 +1,58 @@
 .accordion {
-    width: 1023px;
-    height: 52px;
-    margin: 10px auto;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
+  width: 100%;
+  max-width: 1023px;
+  height: 52px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden; /* Garde cette ligne uniquement si tout fonctionne */
+  background-color: #ff6060;
+  position: relative;
+  bottom: 15px;
 }
 
 .accordionHeader {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: #FF6060;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between; /* Sépare le texte et l'icône */
+  align-items: center; /* Centre verticalement */
+  height: 52px; /* Assure une hauteur constante */
+  padding: 10px;
+  background-color: #ff6060;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+}
+
+.accordionHeader h2 {
+  margin: 0; /* Supprime les marges parasites */
+  flex-grow: 1; /* Prend tout l'espace disponible */
+  text-align: center; /* Centre le texte horizontalement */
+}
+
+
+.icon-toggle {
+  font-size: 24px; /* Taille uniforme */
+  color: white;
+}
+
+.accordion-content {
+  margin-top: 10px;
+  padding-bottom: 15px;
+}
+
+.icon-toggle {
+  font-size: 24px; /* Taille uniforme */
+  color: white;
+  cursor: pointer; /* Assure que le curseur est bien interactif */
+  transition: transform 0.3s ease;
+}
+
+.icon-toggle.open {
+  transform: rotate(180deg);
 }
 
 
 
-.accordionContent {
-    padding: 15px;
-    background-color: white;
-    border-top: 1px solid #ccc;
-}
+

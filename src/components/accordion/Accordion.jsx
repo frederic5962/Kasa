@@ -1,16 +1,33 @@
-import { useState } from "react";
-import styles from "./accordion.module.scss";
+import { useState } from 'react';
+import { Card, Collapse } from 'react-bootstrap';
 
 export default function Accordion({ title, content }) {
-    const [isOpen, setIsOpen] = useState(false);
+  console.log('Props reçues :', title, content);
 
-    return (
-        <div className={styles.accordion}>
-            <div className={styles.accordionHeader} onClick={() => setIsOpen(!isOpen)}>
-                <h2>{title}</h2>
-                <span>{isOpen ? "▼" : "▲"}</span>
-            </div>
-            {isOpen && <div className={styles.accordionContent}>{content}</div>}
-        </div>
-    );
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Card className="mb-3 border-0">
+      {/* En-tête de l'accordéon */}
+      <Card.Header
+        className="d-flex align-items-center justify-content-between bg-danger text-white p-3"
+        onClick={() => setIsOpen(!isOpen)}
+        style={{ cursor: 'pointer' }} // Rendre cliquable
+      >
+        <h2 className="m-0 text-start flex-grow-1">{title}</h2>
+        <span className={`icon-toggle ${isOpen ? 'open' : ''}`}>
+          {isOpen ? '▲' : '▼'}
+        </span>
+      </Card.Header>
+
+      {/* Conteneur englobant nécessaire pour `Collapse` */}
+      <div>
+        <Collapse in={isOpen}>
+          <div className="accordion-content">
+            <Card.Body className="text-black p-3">{content}</Card.Body>
+          </div>
+        </Collapse>
+      </div>
+    </Card>
+  );
 }
