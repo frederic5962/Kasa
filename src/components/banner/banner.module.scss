@@ -1,19 +1,27 @@
-.banner {
-  background: url('/src/assets/banner-main.svg') center/cover no-repeat;
+.bannerCommon {
   width: 1240px;
   height: 223px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-  mix-blend-mode: Darken;
-  filter: brightness(60%); /* Réduit la luminosité */
-  margin: 0 0 20px 0;
+  mix-blend-mode: darken; 
 }
 
-section .bannerTitle  {
-  font-family: Montserrat, sans-serif;
-  font-weight: 700;
-  font-size: 48px;
-  color: #fff;
+.banner {
+  @extend .bannerCommon;
+  background: url('/src/assets/banner-main.svg') center/cover no-repeat;
+  margin: 0; 
 }
+
+.bannerAbout {
+  @extend .bannerCommon;
+  background: url('/src/assets/banner-about.svg') center/cover no-repeat;
+}
+
+ 
+.bannerTitle {
+  color: #ffffff; /* Blanc pur */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Ombre noire légère */
+}
+

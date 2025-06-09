@@ -5,7 +5,7 @@ import Gallery from '../../components/gallery/Gallery';
 export default function Home() {
   return (
     <section className="content">
-      <Banner />
+      <Banner page="home" />
       <Gallery /> {/* La galerie va gérer les liens */}
     </section>
   );

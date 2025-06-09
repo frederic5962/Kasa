@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import logementsData from '../../data/logements.json';
+import logementsData from '../../../public/data/logements.json';
 import { useState } from 'react';
 import styles from './logement.module.scss';
 

@@ -1,14 +1,4 @@
-.bannerAbout {
-  background: url('/src/assets/banner-about.svg') center/cover no-repeat;
-  width: 1240px;
-  height: 223px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 25px;
-  mix-blend-mode: Darken;
-  filter: brightness(60%); /* Réduit la luminosité */
-}
+
 
 .accordionContainer {
   display: flex;
