@@ -10,11 +10,11 @@ export default function Accordion({ title, content }) {
     <Card className="mb-3 border-0">
       {/* En-tête de l'accordéon */}
       <Card.Header
-        className="d-flex align-items-center justify-content-between bg-danger text-white p-3"
+        className="rounded-3 bg-danger text-white p-3 d-flex justify-content-between align-items-center"
         onClick={() => setIsOpen(!isOpen)}
         style={{ cursor: 'pointer' }} // Rendre cliquable
       >
-        <h2 className="m-0 text-start flex-grow-1">{title}</h2>
+        <h2 className="m-0">{title}</h2>
         <span className={`icon-toggle ${isOpen ? 'open' : ''}`}>
           {isOpen ? '▲' : '▼'}
         </span>

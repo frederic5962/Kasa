@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './gallery.module.scss';
 import { Link } from 'react-router-dom';
-import logementsData from '../../../public/data/logements.json';
+
 
 export default function Gallery() {
   const [logements, setLogements] = useState([]);
@@ -17,6 +17,7 @@ export default function Gallery() {
     <div className={styles.gallery}>
       {logements.map(logement => (
         <Link to={`/logement/${logement.id}`} key={logement.id} className={styles.item}>
+          <img src={logement.cover} alt={logement.title} className='{styles.image}' />
           <p className={styles.title}>{logement.title}</p>
         </Link>
       ))}

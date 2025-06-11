@@ -8,6 +8,7 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
+   min-height: 100vh;
 }
 
 #root {
@@ -24,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 
@@ -37,13 +39,13 @@ main.homePage {
 
 main.logementPage {
   width: 1240px;
-  height: 559px; /* Hauteur spécifique à la maquette */
+  height: 643px; /* Hauteur spécifique à la maquette */
   margin: auto;
 }
 
 main.aboutPage {
   width: 1240px;
-  height: 800px; /* Ajuste selon la maquette */
+  height: 100%; /* Ajuste selon la maquette */
   margin: auto;
   display: flex;
   flex-direction: column;

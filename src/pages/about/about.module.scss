@@ -1,11 +1,11 @@
-
-
 .accordionContainer {
   display: flex;
   flex-direction: column; /* Organise les éléments verticalement */
-  gap: 15px; /* Ajoute de l’espace entre les accordéons */
-  max-width: 1023px;
   margin: auto; /* Centre l'ensemble */
-  padding: 20px; /* Ajoute du padding pour éviter que les accordéons soient collés */
+  padding: 40px;
 }
 
+section {
+  position: relative;
+  min-height: 223px; /* Ajuste selon le contenu pour éviter qu'il soit poussé vers le haut */
+}

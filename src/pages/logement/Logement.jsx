@@ -17,8 +17,8 @@ function Logement() {
     setIndex((index - 1 + logement.pictures.length) % logement.pictures.length);
 
   return (
-    <>
-      {/* Carrousel d'images amélioré */}
+    <div className={styles.logementPage}>
+      {/* Carrousel d'images */}
       <div className={styles.carrousel}>
         <button className={styles.prevButton} onClick={prevImage}>
           ◀️
@@ -37,20 +37,43 @@ function Logement() {
           ▶️
         </button>
       </div>
-      <h1 className={styles.logementTitle}>{logement.title}</h1>
-      <p>{logement.description}</p>
-      <ul className={styles.tags}>
-        {logement.tags.map((tag, index) => (
-          <li key={index} className={styles.tagItem}>
-            {tag}
-          </li>
-        ))}
-      </ul>
-      <details>
-        <summary>Plus d'informations</summary>
-        <p>Voici des détails supplémentaires sur le logement.</p>
-      </details>
-    </>
+
+      {/* En-tête du logement */}
+      <div className={styles.logementHeader}>
+        <h1 className={styles.logementTitle}>{logement.title}</h1>
+        <p className={styles.location}>{logement.location}</p>
+      </div>
+
+      {/* Tags */}
+      <div className={styles.tagsContainer}>
+        <ul className={styles.tags}>
+          {logement.tags.map((tag, index) => (
+            <li key={index} className={styles.tagItem}>
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Blocs Description et Équipements */}
+      <div className={styles.detailsContainer}>
+        {/* Bloc Description */}
+        <div className={`${styles.detailsBlock} ${styles.descriptionBlock}`}>
+          <h2>Description</h2>
+          <p>{logement.description}</p>
+        </div>
+
+        {/* Bloc Équipements */}
+        <div className={`${styles.detailsBlock} ${styles.equipmentsBlock}`}>
+          <h2>Équipements</h2>
+          <ul>
+            {logement.equipments.map((equip, index) => (
+              <li key={index}>{equip}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }
 
