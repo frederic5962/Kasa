@@ -1,0 +1,49 @@
+@charset "UTF-8";
+.accordion {
+  width: 100%;
+  height: 52px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden; /* Garde cette ligne uniquement si tout fonctionne */
+  background-color: #ff6060;
+  position: relative;
+  bottom: 15px;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between; /* Sépare le texte et l'icône */
+  align-items: center; /* Centre verticalement */
+  height: 52px; /* Assure une hauteur constante */
+  padding: 10px;
+  background-color: #ff6060;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.accordionHeader h2 {
+  width: auto;
+  flex-shrink: 1;
+  max-width: 70%;
+  text-align: left;
+}
+
+.accordion-content {
+  margin-top: 10px;
+  padding-bottom: 15px;
+}
+
+.icon-toggle {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.icon-toggle.open {
+  transform: rotate(180deg);
+}/*# sourceMappingURL=accordion.module.css.map */

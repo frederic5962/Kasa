@@ -7,21 +7,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const location = useLocation();
 
+  const isErrorPage = location.pathname === "/404"; // Vérifie si on est sur l'erreur
+
   return (
     <>
-      <Header />
+      {!isErrorPage && <Header />}
       <main
         className={
-          location.pathname === '/'
-            ? 'homePage'
-            : location.pathname === '/about'
-            ? 'aboutPage'
-            : 'logementPage'
+          location.pathname === "/"
+            ? "homePage"
+            : location.pathname === "/about"
+            ? "aboutPage"
+            : location.pathname.startsWith("/logement")
+            ? "logementPage"
+            : "errorPage"
         }
       >
-        <Outlet /> {/* Affiche dynamiquement la bonne page */}
+        <Outlet />
       </main>
-      <Footer />
+      {!isErrorPage && <Footer />}
     </>
   );
 }
