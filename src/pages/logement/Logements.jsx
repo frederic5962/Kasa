@@ -1,7 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import styles from './logement.module.scss';
-
+import Accordion from '../../components/accordion/Accordion';
 
 export default function Logement() {
   const { id } = useParams();
@@ -9,7 +9,7 @@ export default function Logement() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    fetch('/logements.json') // Assure-toi que ton fichier est bien dans `public/data/`
+    fetch('/logements.json')
       .then(response => response.json())
       .then(data => {
         const foundLogement = data.find(l => l.id === id);
@@ -36,12 +36,22 @@ export default function Logement() {
     <div className={styles.logementPage}>
       {/* Carrousel d'images */}
       <div className={styles.carrousel}>
-        <button className={styles.prevButton} onClick={prevImage}>◀️</button>
+        <button className={styles.prevButton} onClick={prevImage}>
+          ◀️
+        </button>
         <div className={styles.imageContainer}>
-          <img src={logement.pictures[index]} alt={`Image ${index + 1}`} className={styles.image} />
-          <p className={styles.counter}>{index + 1} / {logement.pictures.length}</p>
+          <img
+            src={logement.pictures[index]}
+            alt={`Image ${index + 1}`}
+            className={styles.image}
+          />
+          <p className={styles.counter}>
+            {index + 1} / {logement.pictures.length}
+          </p>
         </div>
-        <button className={styles.nextButton} onClick={nextImage}>▶️</button>
+        <button className={styles.nextButton} onClick={nextImage}>
+          ▶️
+        </button>
       </div>
 
       {/* En-tête du logement */}
@@ -54,28 +64,25 @@ export default function Logement() {
       <div className={styles.tagsContainer}>
         <ul className={styles.tags}>
           {logement.tags.map((tag, index) => (
-            <li key={index} className={styles.tagItem}>{tag}</li>
+            <li key={index} className={styles.tagItem}>
+              {tag}
+            </li>
           ))}
         </ul>
       </div>
 
       {/* Blocs Description et Équipements */}
-      <div className={styles.detailsContainer}>
-        {/* Bloc Description */}
-        <div className={`${styles.detailsBlock} ${styles.descriptionBlock}`}>
-          <h2>Description</h2>
-          <p>{logement.description}</p>
-        </div>
-
-        {/* Bloc Équipements */}
-        <div className={`${styles.detailsBlock} ${styles.equipmentsBlock}`}>
-          <h2>Équipements</h2>
-          <ul>
-            {logement.equipments.map((equip, index) => (
-              <li key={index}>{equip}</li>
-            ))}
-          </ul>
-        </div>
+      <div className={styles.accordionContainer}>
+        <Accordion
+          className={styles.descAccordion}
+          title="Description"
+          content={logement.description}
+        />
+        <Accordion
+          className={styles.equipAccordion}
+          title="Équipements"
+          content={logement.equipments.join(', ')}
+        />
       </div>
     </div>
   );

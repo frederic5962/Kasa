@@ -39,7 +39,6 @@ main.homePage {
 
 main.logementPage {
   width: 1240px;
-  height: 643px; /* Hauteur spécifique à la maquette */
   margin: auto;
 }
 

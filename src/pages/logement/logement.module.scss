@@ -63,7 +63,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
   width: 100%;
 }
 
@@ -84,9 +83,10 @@ button:hover {
 
 /* 🎭 Tags */
 .tagsContainer {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-top: 10px;
 }
 
 .tags {
@@ -107,42 +107,30 @@ button:hover {
   list-style: none;
 }
 
-/* 📌 Section Description & Équipements */
-.detailsContainer {
+.descAccordion {
+  width: 582px;
+  height: 52px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  align-self: flex-start; /* Positionne vers le haut */
+}
+
+.equipAccordion {
+  width: 582px;
+  height: 52px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  align-self: flex-end; /* Positionne vers le bas */
+}
+
+.accordionContainer {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: space-between; /* Répartit les éléments */
+  gap: 20px; /* Ajoute l’espace entre eux */
   width: 100%;
-  margin-top: 20px;
 }
 
-.detailsBlock {
-  width: 48%; /* Chaque bloc prend la moitié de l’espace */
-  background-color: #FF6060; /* Style cohérent avec les accordéons */
-  padding: 15px;
-  border-radius: 8px;
-  color: white;
-  font-size: 18px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 
-.detailsBlock h2 {
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 
-.detailsBlock p {
-  font-size: 16px;
-  color: white;
-}
 
-.detailsBlock ul {
-  list-style: none;
-  padding: 0;
-}
 
-.detailsBlock li {
-  font-size: 16px;
-  margin-bottom: 5px;
-}

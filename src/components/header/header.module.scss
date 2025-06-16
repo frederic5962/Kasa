@@ -22,8 +22,19 @@
 }
 
 .active {
-  border-bottom: 2px solid #000;
   text-decoration: none;
   color: #000000;
   font-size: 24px;
+  position: relative;
 }
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Ajuste pour éviter le saut visuel */
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+}
+
