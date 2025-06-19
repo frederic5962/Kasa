@@ -1,6 +1,8 @@
+import  bannerMain from "../assets/banner-main.svg";
+
 const banners = {
   home: {
-    image: "/src/assets/banner-main.svg",
+    image: bannerMain,
     text: "Chez vous, partout et ailleurs",
     className: "banner",
   },

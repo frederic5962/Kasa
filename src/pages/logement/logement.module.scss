@@ -107,30 +107,78 @@ button:hover {
   list-style: none;
 }
 
-.descAccordion {
-  width: 582px;
-  height: 52px;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  align-self: flex-start; /* Positionne vers le haut */
+
+@media (max-width: 1024px) {
+  .logementPage {
+    padding: 0 20px;
+  }
+
+  .carrousel {
+    height: 300px;
+  }
+
+  .logementTitle {
+    font-size: 36px;
+  }
+
+  .location {
+    font-size: 20px;
+  }
 }
 
-.equipAccordion {
-  width: 582px;
-  height: 52px;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  align-self: flex-end; /* Positionne vers le bas */
+@media (max-width: 768px) {
+  .carrousel {
+    height: 240px;
+  }
+
+  .logementTitle {
+    font-size: 28px;
+  }
+
+  .location {
+    font-size: 16px;
+  }
+
+  .tagItem {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  button {
+    padding: 8px;
+  }
 }
 
-.accordionContainer {
-  display: flex;
-  justify-content: space-between; /* Répartit les éléments */
-  gap: 20px; /* Ajoute l’espace entre eux */
-  width: 100%;
+@media (max-width: 480px) {
+  .logementPage {
+    gap: 12px;
+  }
+
+  .carrousel {
+    height: 180px;
+  }
+
+  .logementTitle {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .location {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .tagsContainer {
+    justify-content: center;
+  }
+
+  .tagItem {
+    font-size: 11px;
+  }
+
+  button {
+    font-size: 12px;
+  }
 }
-
-
-
 
 

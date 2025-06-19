@@ -1,22 +1,22 @@
-
-
+// 🔴 Styles globaux pour tous les accordéons
 .accordion {
   width: 100%;
   height: 52px;
   margin: 10px auto;
   border: 1px solid #ccc;
   border-radius: 8px;
-  overflow: hidden; 
+  overflow: hidden;
   background-color: #ff6060;
   position: relative;
   bottom: 15px;
 }
 
+// 🎭 En-tête d'accordéon
 .accordionHeader {
-  display: flex; 
-  justify-content: space-between; /* Sépare le texte et l'icône */
-  align-items: center; /* Centre verticalement */
-  height: 52px; /* Assure une hauteur constante */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
   padding: 10px;
   background-color: #ff6060;
   color: white;
@@ -25,18 +25,7 @@
   text-transform: uppercase;
 }
 
-.accordionHeader h2 {
-  width: auto;
-  flex-shrink: 1;
-  max-width: 70%;
-  text-align: left;
-}
-
-.accordion-content {
-  margin-top: 10px;
-  padding-bottom: 15px;
-}
-
+// ⏬ Icônes de bascule
 .icon-toggle {
   font-size: 24px;
   color: white;
@@ -48,3 +37,24 @@
 .icon-toggle.open {
   transform: rotate(180deg);
 }
+
+.accordionLogement {
+  width: 582px;
+  height: 52px;
+  background-color: #f0f0f0;
+  border: 2px solid #FF6060;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.accordionLogementContainer {
+  display: flex;
+  width: 100%;
+  height: 52px;
+  flex-direction: row; /* Ou row selon le design */
+  align-items: center;
+  gap: 76px;
+  background-color: #f8f8f8; /* Ajuste la couleur */
+}
+
+

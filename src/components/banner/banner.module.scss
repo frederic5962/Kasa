@@ -1,27 +1,51 @@
 .bannerCommon {
-  width: 1240px;
+  width: 100%;
+  max-width: 1240px;
   height: 223px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
   mix-blend-mode: darken;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  background-position:  center; /*positionne l'image dans son bloc*/
 }
 
 .banner {
   @extend .bannerCommon;
-  background: url('/src/assets/banner-main.svg') center/cover no-repeat;
-  margin: 0; 
 }
 
 .bannerAbout {
   @extend .bannerCommon;
-  background: url('/src/assets/banner-about.svg') center/cover no-repeat;
 }
 
- 
 .bannerTitle {
-  color: #ffffff; /* Blanc pur */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Ombre noire légère */
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+  line-height: 1.2;
+  padding: 0 15px;
+  z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .bannerCommon {
+    height: 160px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerCommon {
+    height: 120px;
+    border-radius: 10px;
+  }
+
+  .bannerTitle {
+    font-size: 1.25rem;
+  }
+}

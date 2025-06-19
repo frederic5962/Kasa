@@ -9,3 +9,14 @@ section {
   position: relative;
   min-height: 223px; /* Ajuste selon le contenu pour éviter qu'il soit poussé vers le haut */
 }
+
+@media (max-width: 768px) {
+  .accordionContainer {
+    padding: 20px;
+  }
+
+  section {
+    min-height: auto;
+    padding-top: 20px;
+  }
+}

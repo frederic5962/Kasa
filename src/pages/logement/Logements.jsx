@@ -70,20 +70,11 @@ export default function Logement() {
           ))}
         </ul>
       </div>
+    <div className={styles.accordionLogementContainer}>
+  <Accordion className={styles.accordionLogement} title="Description" content={logement.description} />
+  <Accordion className={styles.accordionLogement} title="Équipements" content={logement.equipments.join(', ')} />
+</div>
 
-      {/* Blocs Description et Équipements */}
-      <div className={styles.accordionContainer}>
-        <Accordion
-          className={styles.descAccordion}
-          title="Description"
-          content={logement.description}
-        />
-        <Accordion
-          className={styles.equipAccordion}
-          title="Équipements"
-          content={logement.equipments.join(', ')}
-        />
-      </div>
     </div>
   );
 }
