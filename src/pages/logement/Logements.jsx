@@ -1,30 +1,19 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './logement.module.scss';
 import Accordion from '../../components/accordion/Accordion';
+import useFetchLogement from '../../hooks/useFetchLogement';
 
 export default function Logement() {
   const { id } = useParams();
-  const [logement, setLogement] = useState(null);
+  const { logement, loading, notFound } = useFetchLogement(id);
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    fetch('/logements.json')
-      .then(response => response.json())
-      .then(data => {
-        const foundLogement = data.find(l => l.id === id);
-        setLogement(foundLogement);
-      })
-      .catch(error => console.error('Erreur de chargement', error));
-  }, [id]);
-
-  // Redirection vers la page 404 si le logement n'est pas trouvé
-  if (logement === undefined) {
+  if (notFound) {
     return <Navigate to="/404" />;
   }
 
-  // Si `logement` est encore en attente de chargement
-  if (!logement) {
+  if (loading || !logement) {
     return <h2>Chargement...</h2>;
   }
 
@@ -34,7 +23,6 @@ export default function Logement() {
 
   return (
     <div className={styles.logementPage}>
-      {/* Carrousel d'images */}
       <div className={styles.carrousel}>
         <button className={styles.prevButton} onClick={prevImage}>
           ◀️
@@ -54,13 +42,11 @@ export default function Logement() {
         </button>
       </div>
 
-      {/* En-tête du logement */}
       <div className={styles.logementHeader}>
         <h1 className={styles.logementTitle}>{logement.title}</h1>
         <p className={styles.location}>{logement.location}</p>
       </div>
 
-      {/* Tags */}
       <div className={styles.tagsContainer}>
         <ul className={styles.tags}>
           {logement.tags.map((tag, index) => (
@@ -70,11 +56,19 @@ export default function Logement() {
           ))}
         </ul>
       </div>
-    <div className={styles.accordionLogementContainer}>
-  <Accordion className={styles.accordionLogement} title="Description" content={logement.description} />
-  <Accordion className={styles.accordionLogement} title="Équipements" content={logement.equipments.join(', ')} />
-</div>
 
+      <div className={styles.accordionOpenContainer}>
+        <Accordion
+          className={styles.accordionLogement}
+          title="Description"
+          content={logement.description}
+        />
+        <Accordion
+          className={styles.accordionLogement}
+          title="Équipements"
+          content={logement.equipments.join(', ')}
+        />
+      </div>
     </div>
   );
 }

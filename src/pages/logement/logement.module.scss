@@ -70,8 +70,7 @@ button:hover {
   font-family: Montserrat, sans-serif;
   font-weight: 500;
   font-size: 48px;
-  color: #FF6060;
-  margin-bottom: 10px;
+  color: #ff6060;
 }
 
 .location {
@@ -97,7 +96,7 @@ button:hover {
 }
 
 .tagItem {
-  background-color: #FF6060;
+  background-color: #ff6060;
   color: white;
   padding: 5px 10px;
   border-radius: 8px;
@@ -107,22 +106,31 @@ button:hover {
   list-style: none;
 }
 
+.accordionLogement {
+  width: 582px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  border: 2px solid #ff6060;
+  padding: 0;
+}
+
+.accordionOpenContainer {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  flex-wrap: nowrap; // desktop only
+}
 
 @media (max-width: 1024px) {
-  .logementPage {
-    padding: 0 20px;
+  .accordionOpenContainer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
   }
 
-  .carrousel {
-    height: 300px;
-  }
-
-  .logementTitle {
-    font-size: 36px;
-  }
-
-  .location {
-    font-size: 20px;
+  .accordionLogement {
+    width: 100%;
+    max-width: 600px;
   }
 }
 
@@ -180,5 +188,3 @@ button:hover {
     font-size: 12px;
   }
 }
-
-
