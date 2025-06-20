@@ -1,13 +1,14 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { useState } from 'react';
 import styles from './logement.module.scss';
 import Accordion from '../../components/accordion/Accordion';
 import useFetchLogement from '../../hooks/useFetchLogement';
+import Carousel from '../../components/carousel/Carousel';
+import LogementHeader from '../../components/logementHeader/LogementHeader';
+
 
 export default function Logement() {
   const { id } = useParams();
   const { logement, loading, notFound } = useFetchLogement(id);
-  const [index, setIndex] = useState(0);
 
   if (notFound) {
     return <Navigate to="/404" />;
@@ -17,35 +18,15 @@ export default function Logement() {
     return <h2>Chargement...</h2>;
   }
 
-  const nextImage = () => setIndex((index + 1) % logement.pictures.length);
-  const prevImage = () =>
-    setIndex((index - 1 + logement.pictures.length) % logement.pictures.length);
-
   return (
     <div className={styles.logementPage}>
-      <div className={styles.carrousel}>
-        <button className={styles.prevButton} onClick={prevImage}>
-          ◀️
-        </button>
-        <div className={styles.imageContainer}>
-          <img
-            src={logement.pictures[index]}
-            alt={`Image ${index + 1}`}
-            className={styles.image}
-          />
-          <p className={styles.counter}>
-            {index + 1} / {logement.pictures.length}
-          </p>
-        </div>
-        <button className={styles.nextButton} onClick={nextImage}>
-          ▶️
-        </button>
-      </div>
-
-      <div className={styles.logementHeader}>
-        <h1 className={styles.logementTitle}>{logement.title}</h1>
-        <p className={styles.location}>{logement.location}</p>
-      </div>
+      <Carousel images={logement.pictures} />
+      <LogementHeader
+        title={logement.title}
+        location={logement.location}
+        host={logement.host}
+        rating={logement.rating}
+      />
 
       <div className={styles.tagsContainer}>
         <ul className={styles.tags}>

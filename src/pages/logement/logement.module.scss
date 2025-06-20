@@ -60,16 +60,22 @@ button:hover {
 
 /* 🏡 En-tête du logement */
 .logementHeader {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  right: 315px;
+  text-align: left;
+  max-width: 635px;
+  min-height: 77px;
   width: 100%;
+  box-sizing: border-box;
 }
+
 
 .logementTitle {
   font-family: Montserrat, sans-serif;
   font-weight: 500;
-  font-size: 48px;
+  font-size: 36px;
   color: #ff6060;
 }
 
