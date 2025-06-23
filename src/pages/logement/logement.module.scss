@@ -88,10 +88,12 @@ button:hover {
 
 /* 🎭 Tags */
 .tagsContainer {
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  bottom: 67px;
 }
 
 .tags {
@@ -121,10 +123,12 @@ button:hover {
 }
 
 .accordionOpenContainer {
+  position: relative;
   display: flex;
   gap: 80px;
   justify-content: center;
-  flex-wrap: nowrap; // desktop only
+  flex-wrap: nowrap; 
+  bottom: 80px;
 }
 
 @media (max-width: 1024px) {

@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 1240px;
-  margin-bottom: 20px;
 }
 
 .logementInfo {
@@ -25,7 +24,6 @@
   font-size: 24px;
   font-weight: 500;
   color: #000000;
-  margin: 5px 0 0;
 }
 
 .hostAndRating {
@@ -42,7 +40,7 @@
 }
 
 .hostName {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   color: #ff6060;
 }
@@ -61,10 +59,10 @@
 
 .starFilled {
   color: #ff6060;
-  font-size: 20px;
+  font-size: 36px;
 }
 
 .starEmpty {
   color: #e3e3e3;
-  font-size: 20px;
+  font-size: 36px;
 }

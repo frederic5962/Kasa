@@ -8,7 +8,7 @@ export default function ErrorPage() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       navigate('/');
-    }, 31000); // Redirige vers l'accueil après 3 secondes
+    }, 5000); 
 
     return () => clearTimeout(timeout); // Nettoyage du timeout pour éviter les erreurs
   }, [navigate]);
