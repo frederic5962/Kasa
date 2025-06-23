@@ -1,22 +1,18 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import styles from "./Carousel.module.scss";
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import styles from './carousel.module.scss';
 
 export default function Carousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex(prevIndex => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex(prevIndex => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
   if (images.length === 1) {
@@ -34,12 +30,14 @@ export default function Carousel({ images }) {
         alt={`Image ${currentIndex + 1} sur ${images.length}`}
         className={styles.image}
       />
-      <button className={styles.prev} onClick={handlePrev}>
+      <button className={`${styles.navButton} ${styles.prev}`} onClick={handlePrev}>
         <FontAwesomeIcon icon={faChevronLeft} className={styles.icon} />
       </button>
-      <button className={styles.next} onClick={handleNext}>
+
+      <button className={`${styles.navButton} ${styles.next}`} onClick={handleNext}>
         <FontAwesomeIcon icon={faChevronRight} className={styles.icon} />
       </button>
+
       <div className={styles.indicator}>
         {currentIndex + 1}/{images.length}
       </div>

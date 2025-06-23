@@ -1,9 +1,9 @@
-.carousel {
+/* .carousel {
   position: relative;
   align-items: center;
   width: 1240px;
   height: 415px;
-  margin: 0 auto; // pour le centrer dans la page
+  margin: 0 auto;
 }
 
 .image {
@@ -13,35 +13,35 @@
   object-fit: cover;
 }
 
-.navButton {
+.carousel-prev,
+.carousel-next {
   position: absolute;
-  background: none;
+  top: 50%;
+  color: white;
   border: none;
   cursor: pointer;
-  z-index: 2;
-  bottom: 50px;
+  border-radius: 50%;
+  height: 20px;
+  width: 12px;
 }
 
-.prev {
-  bottom: 160px;
-  left: 23px;
+.carousel-next {
+  right: 10px;
+  transform: translateX(-50%);
 }
 
-.next {
-  bottom: 160px;
-  right: 23px;
+.carousel-prev {
+  left: 10px;
+  transform: translateX(50%);
 }
 
 .icon {
+  position: relative;
   height: 79px;
   width: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px; // ou la taille que tu veux
-  color: white;
 }
 
 .carousel-indicator {
   display: none;
 }
+ */

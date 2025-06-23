@@ -37,7 +37,7 @@
 }
 
 /* 🔘 Boutons du carrousel */
-button {
+/* button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -50,7 +50,7 @@ button {
 
 button:hover {
   background: rgba(0, 0, 0, 0.8);
-}
+} */
 
 .prevButton {
   left: 15px;
