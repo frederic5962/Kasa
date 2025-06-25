@@ -5,7 +5,7 @@
   margin: 10px auto;
   border: 1px solid #ccc;
   border-radius: 8px;
-  overflow: hidden; /* Garde cette ligne uniquement si tout fonctionne */
+  overflow: hidden; 
   background-color: #ff6060;
   position: relative;
   bottom: 15px;
@@ -13,9 +13,9 @@
 
 .accordionHeader {
   display: flex;
-  justify-content: space-between; /* Sépare le texte et l'icône */
-  align-items: center; /* Centre verticalement */
-  height: 52px; /* Assure une hauteur constante */
+  justify-content: space-between; 
+  align-items: center; 
+  height: 52px; 
   padding: 10px;
   background-color: #ff6060;
   color: white;
@@ -46,4 +46,4 @@
 
 .icon-toggle.open {
   transform: rotate(180deg);
-}/*# sourceMappingURL=accordion.module.css.map */
+}

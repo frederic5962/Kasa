@@ -23,5 +23,5 @@
   position: relative;
   top: 100px;
   left: 50%;
-  transform: translateX(-50%); /* Centre horizontalement */
-}/*# sourceMappingURL=footer.module.css.map */
+  transform: translateX(-50%); 
+}

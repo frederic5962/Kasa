@@ -15,10 +15,10 @@ body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  /* color-scheme: light dark; */ /* mode sombre*/
+  
   color: rgba(255, 255, 255, 0.87);
-  font-synthesis: none; /*désactive la synthèse automatique*/
-  text-rendering: optimizeLegibility; /*améliore la lisibilité du texte*/
+  font-synthesis: none; 
+  text-rendering: optimizeLegibility; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   flex: 1;

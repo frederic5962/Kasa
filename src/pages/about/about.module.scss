@@ -1,13 +1,13 @@
 .accordionContainer {
   display: flex;
-  flex-direction: column; /* Organise les éléments verticalement */
-  margin: auto; /* Centre l'ensemble */
+  flex-direction: column; 
+  margin: auto; 
   padding: 40px;
 }
 
 section {
   position: relative;
-  min-height: 223px; /* Ajuste selon le contenu pour éviter qu'il soit poussé vers le haut */
+  min-height: 223px; 
 }
 
 @media (max-width: 768px) {
