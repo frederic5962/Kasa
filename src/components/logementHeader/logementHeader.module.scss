@@ -66,3 +66,47 @@
   color: #e3e3e3;
   font-size: 36px;
 }
+
+
+@media (max-width: 768px) {
+  .logementHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .logementInfo {
+    max-width: 100%;
+  }
+
+  .logementTitle {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+
+  .location {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+
+  .hostAndRating {
+    position: relative;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    top: 20px;
+  }
+
+  .hostPicture {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hostName {
+    font-size: 16px;
+  }
+
+  .starFilled,
+  .starEmpty {
+    font-size: 24px;
+  }
+}

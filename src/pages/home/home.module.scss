@@ -9,19 +9,8 @@
   height: 1095px;
   border-width: 1px;
   border-style: solid;
-  border-color: #ccc; 
+  border-color: #ccc;
   margin: auto;
   display: grid;
   grid-template-rows: auto auto;
-}
-
-@media (max-width: 768px) {
-  .content {
-    padding: 10px;
-    grid-template-rows: auto;
-  }
-
-  .home-container {
-    align-items: stretch;
-  }
 }

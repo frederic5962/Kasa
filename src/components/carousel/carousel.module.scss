@@ -1,17 +1,20 @@
 .carousel {
   position: relative;
   align-items: center;
-  width: 1240px;
-  height: 415px;
-  margin: 0 auto; 
+  width: 100%;
+  max-width: 1240px;
+  height: auto;
+  aspect-ratio: 1240 / 415;
+  margin: 0 auto;
 }
 
 .image {
-  width: 1240px;
-  height: 415px;
+  width: 100%;
+  height: 100%;
   border-radius: 25px;
   object-fit: cover;
 }
+
 
 .navButton {
   position: absolute;
@@ -39,6 +42,7 @@
   align-items: center;
   justify-content: center;
   font-size: 32px; 
+  color: white;
 }
 
 .carousel-indicator {
